@@ -1,0 +1,18 @@
+<?php
+
+namespace {{ namespace }};
+ 
+use Illuminate\Database\Eloquent\Model;
+
+class {{ class }} extends Model
+{
+	protected $attributes = []; 
+
+	protected $casts = [];
+
+	protected $appends = [];
+
+	protected $guarded = [];
+
+	protected $hidden = [];
+}

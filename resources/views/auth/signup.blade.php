@@ -18,7 +18,7 @@
         </ul>
     </div>
 @endif
-<form method="POST" action="{{ route('signup') }}">
+<form method="POST" action="{{ route('auth.signup') }}">
     @csrf
     <div class="mt-8 space-y-4"> 
 
@@ -34,11 +34,11 @@
  
         <x-g-recaptcha />
  
-        <x-button type="submit" block lg>{{__('auth.signup')}}</x-button>
+        <x-button submit block lg>{{__('auth.signup')}}</x-button>
 
         <div class="text-xs text-center text-slate-400 pt-4">{{__('auth.already_have_account')}}</div> 
 
-        <x-button href="{{ route('signin') }}" block text>{{__('auth.signin')}}</x-button> 
+        <x-button href="{{ route('auth.signin') }}" block text>{{__('auth.signin')}}</x-button> 
  
     </div>
 </form>

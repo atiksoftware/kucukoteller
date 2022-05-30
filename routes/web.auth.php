@@ -13,26 +13,26 @@ use Illuminate\Support\Facades\Route;
 // route group its starting with /auth and its middleware is guest
 Route::group(['prefix' => 'auth', 'middleware' => 'guest'], function (): void {
 	Route::get('signup', [RegisteredUserController::class, 'create'])
-		->name('signup');
+		->name('auth.signup');
 
 	Route::post('signup', [RegisteredUserController::class, 'store']);
 
 	Route::get('signin', [AuthenticatedSessionController::class, 'create'])
-		->name('signin');
+		->name('auth.signin');
 
 	Route::post('signin', [AuthenticatedSessionController::class, 'store']);
 
 	Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
-		->name('password.request');
+		->name('auth.password.request');
 
 	Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
-		->name('password.email');
+		->name('auth.password.email');
 
 	Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
-		->name('password.reset');
+		->name('auth.password.reset');
 
 	Route::post('reset-password', [NewPasswordController::class, 'store'])
-		->name('password.update');
+		->name('auth.password.update');
 });
 
 Route::middleware('auth')->group(function (): void {

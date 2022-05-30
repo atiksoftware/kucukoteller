@@ -15,4 +15,17 @@ return [
 	'dont_have_an_account' => 'Don\'t have an account?',
 	'firstname' => 'Firstname',
 	'lastname' => 'Lastname',
+	'continue' => 'Continue',
+
+	'validation' => [
+		'email.required' => 'Email is required',
+		'email.email' => 'Email is invalid',
+		'g-recaptcha.required' => 'Please verify that you are not a robot',
+		'g-recaptcha.recaptcha' => 'Please verify that you are not a robot',
+	],
+
+	'forgot-password' => [
+		'email-sent' => 'Password reset link has been sent to your email',
+		'invalid-user' => 'The email address is not associated with any account',
+	],
 ];
