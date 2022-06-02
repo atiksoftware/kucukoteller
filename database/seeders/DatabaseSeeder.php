@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
 			'lastname' => 'Atik',
 			'email' => 'atiksoftware@gmail.com',
 		]);
+
+		// call OptionSeeder
+		$this->call(OptionSeeder::class);
 	}
 }

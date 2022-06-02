@@ -41,7 +41,7 @@
 
         <x-textbox name="email" label="{{__('auth.email')}}" value="{{Request::old('email')}}" required autofocus />
   
-        <x-g-recaptcha />
+        {{-- <x-g-recaptcha /> --}}
  
         <x-button submit block lg>{{__('auth.continue')}}</x-button> 
 

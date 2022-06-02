@@ -77,11 +77,14 @@ class ResetPassword extends Notification
 	protected function buildMailMessage($url)
 	{
 		return (new MailMessage())
-			->subject(Lang::get('Reset Password Notification'))
-			->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-			->action(Lang::get('Reset Password'), $url)
-			->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.' . config('auth.defaults.passwords') . '.expire')]))
-			->line(Lang::get('If you did not request a password reset, no further action is required.'));
+			// ->subject(Lang::get('Reset Password Notification'))
+			->subject(__('auth.forgot-password.reset-password-notification'))
+			// ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
+			->line(__('auth.forgot-password.you-are-receiving-this-email-because-you-have-requested-a-password-reset-for-your-account'))
+			// ->action(Lang::get('Reset Password'), $url)
+			->action(__('auth.forgot-password.click-here-to-reset-password'), $url)
+			->line(__('auth.forgot-password.password-reset-link-expired', ['count' => config('auth.passwords.' . config('auth.defaults.passwords') . '.expire')]))
+			->line(__('auth.forgot-password.if-you-did-not-request-a-password-reset-no-further-action-is-required'));
 	}
 
 	/**
@@ -97,7 +100,7 @@ class ResetPassword extends Notification
 			return \call_user_func(static::$createUrlCallback, $notifiable, $this->token);
 		}
 
-		return url(route('password.reset', [
+		return url(route('auth.password.reset', [
 			'token' => $this->token,
 			'email' => $notifiable->getEmailForPasswordReset(),
 		], false));
@@ -122,4 +125,11 @@ class ResetPassword extends Notification
 	{
 		static::$toMailCallback = $callback;
 	}
+
+	// public function toDatabase($notifiable)
+	// {
+	// 	return [
+	// 		'message' => 'heeft een reactie geplaatst op een van je tickets',
+	// 	];
+	// }
 }
