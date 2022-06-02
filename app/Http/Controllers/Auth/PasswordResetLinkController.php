@@ -29,7 +29,7 @@ class PasswordResetLinkController extends Controller
 	{
 		$this->validate($request, [
 			'email' => 'required|email',
-			// 'g-recaptcha-response' => 'required|recaptcha',
+			'g-recaptcha-response' => 'required|recaptcha',
 		], [
 			'email.required' => __('auth.validation.email.required'),
 			'email.email' => __('auth.validation.email.email'),

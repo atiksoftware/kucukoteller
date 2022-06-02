@@ -19,17 +19,20 @@ class NewPasswordController extends Controller
 
 	public function store(Request $request)
 	{
+		$min = 8;
+		$rules = new Rules\Password($min);
+
 		$this->validate($request, [
 			'token' => ['required'],
 			'email' => ['required', 'email'],
-			'password' => ['required', 'min:6', 'confirmed', Rules\Password::defaults()],
+			'password' => ['required', 'min:' . $min, 'confirmed', $rules],
 		], [
-			'token.required' => __('validation.token.required'),
-			'email.required' => __('validation.email.required'),
-			'email.email' => __('validation.email.email'),
-			'password.required' => __('validation.password.required'),
-			'password.min' => __('validation.password.min'),
-			'password.confirmed' => __('validation.password.confirmed'),
+			'token.required' => __('auth.validation.token.required'),
+			'email.required' => __('auth.validation.email.required'),
+			'email.email' => __('auth.validation.email.email'),
+			'password.required' => __('auth.validation.password.required'),
+			'password.min' => __('auth.validation.password.min', ['min' => $min]),
+			'password.confirmed' => __('auth.validation.password.confirmed'),
 		]);
 
 		$status = Password::reset(
@@ -44,9 +47,14 @@ class NewPasswordController extends Controller
 			}
 		);
 
-		return Password::PASSWORD_RESET === $status
-					? redirect()->route('login')->with('status', __($status))
-					: back()->withInput($request->only('email'))
-						->withErrors(['email' => __($status)]);
+		if (Password::PASSWORD_RESET === $status) {
+			return redirect()->route('auth.signin')->with('status', __($status));
+		}
+
+		return back()
+			->withInput($request->only('email'))
+			->withErrors([
+				'email' => __($status),
+			]);
 	}
 }

@@ -13,7 +13,7 @@ class ReCaptcha
 			'https://www.google.com/recaptcha/api/siteverify',
 			[
 				'form_params' => [
-					'secret' => env('google_recaptcha_secret_key'),
+					'secret' => env('RECAPTCHA_SECRET_KEY'),
 					'response' => $value,
 				],
 			]

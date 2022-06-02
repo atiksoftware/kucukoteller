@@ -18,10 +18,25 @@ return [
 	'continue' => 'Continue',
 
 	'validation' => [
-		'email.required' => 'Email is required',
-		'email.email' => 'Email is invalid',
-		'g-recaptcha.required' => 'Please verify that you are not a robot',
-		'g-recaptcha.recaptcha' => 'Please verify that you are not a robot',
+		'g-recaptcha' => [
+			'required' => 'Please verify that you are not a robot',
+			'recaptcha' => 'Please verify that you are not a robot',
+		],
+		'token' => [
+			'required' => 'Token is required',
+			'expired' => 'Token is expired',
+			'invalid' => 'Token is invalid',
+		],
+		'email' => [
+			'required' => 'Email is required',
+			'email' => 'Email is invalid',
+		],
+		'password' => [
+			'required' => 'Password is required',
+			'min' => 'Password must be at least :min characters',
+			'max' => 'Password must be at most :max characters',
+			'confirmed' => 'Password confirmation does not match',
+		],
 	],
 
 	'forgot-password' => [
