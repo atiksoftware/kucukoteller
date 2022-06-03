@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Notifications\ResetPassword;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Notifications\VerifyEmail;
+use App\Notifications\ResetPassword;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
 	use HasApiTokens;
-	use HasFactory;
 	use Notifiable;
 
 	protected $attributes = [
@@ -21,6 +21,8 @@ class User extends Authenticatable
 		'password' => '', // [type: string]
 		'remember_token' => null,  // [type: string, nullable]
 		'email_verified_at' => null, // [type: datetime, nullable]
+		'two_factor_secret' => null, // [type: string, nullable]
+		'two_factor_enabled' => false, // [type: boolean]
 	];
 
 	protected $casts = [
@@ -30,6 +32,8 @@ class User extends Authenticatable
 		'password' => 'string',
 		'remember_token' => 'string',
 		'email_verified_at' => 'datetime',
+		'two_factor_secret' => 'string',
+		'two_factor_enabled' => 'boolean',
 	];
 
 	protected $appends = [];
@@ -41,5 +45,10 @@ class User extends Authenticatable
 	public function sendPasswordResetNotification($token): void
 	{
 		$this->notify(new ResetPassword($token));
+	}
+
+	public function sendEmailVerificationNotification(): void
+	{
+		$this->notify(new VerifyEmail());
 	}
 }

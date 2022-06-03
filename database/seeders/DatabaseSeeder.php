@@ -19,11 +19,11 @@ class DatabaseSeeder extends Seeder
 		//     'email' => 'test@example.com',
 		// ]);
 
-		User::create([
-			'firstname' => 'Mansur',
-			'lastname' => 'Atik',
-			'email' => 'atiksoftware@gmail.com',
-		]);
+		// User::create([
+		// 	'firstname' => 'Mansur',
+		// 	'lastname' => 'Atik',
+		// 	'email' => 'atiksoftware@gmail.com',
+		// ]);
 
 		// call OptionSeeder
 		$this->call(OptionSeeder::class);

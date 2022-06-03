@@ -21,6 +21,8 @@ return new class extends Migration
 			$table->string('password');
 			$table->string('remember_token')->nullable();
 			$table->datetime('email_verified_at')->nullable();
+			$table->string('two_factor_secret')->nullable();
+			$table->boolean('two_factor_enabled');
 			$table->timestamps();
         });
     }

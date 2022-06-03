@@ -21,11 +21,11 @@
 
     <div class="flex items-center justify-center min-h-screen">
         
-        <div class=" max-w-full w-[448px] p-12  md:border rounded mx-auto"> 
+        <div class=" max-w-full w-[448px] p-4 md:p-12  md:border rounded mx-auto"> 
             
             <div class="mb-12 mt-4 text-center">
                 <h1 class="text-2xl ">@yield('title')</h1>
-                <p class="text-sm">@yield('description')</p>
+                <p class="text-sm text-slate-400">@yield('description')</p>
             </div>
             
             @yield('content', 'Default content')

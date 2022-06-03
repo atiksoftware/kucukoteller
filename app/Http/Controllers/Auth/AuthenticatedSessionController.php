@@ -25,7 +25,7 @@ class AuthenticatedSessionController extends Controller
 			return redirect()->route('admin.posts');
 		}
 
-		return redirect()->route('profile');
+		// return redirect()->route('profile');
 
 		return redirect()->intended(RouteServiceProvider::HOME);
 	}

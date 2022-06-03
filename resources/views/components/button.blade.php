@@ -9,7 +9,9 @@
     'pill' => false,
     'sm' => false,
     'lg' => false,
-    'href' => ''
+    'href' => '',
+    'class' => '',
+    'bold' => false,
 ])
 
 @php
@@ -55,6 +57,7 @@
     //     $text, 
     // ]); 
     $classes = [
+        $class,
         'text-center',
         'transition-colors',
         $px,
@@ -83,6 +86,9 @@
 
     if($href != ''){
         $classes[] = 'inline-block';
+    }
+    if($bold ){
+        $classes[] = 'font-bold';
     }
 
 @endphp

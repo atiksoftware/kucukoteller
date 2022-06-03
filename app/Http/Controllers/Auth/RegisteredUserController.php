@@ -8,6 +8,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rules;
 
 class RegisteredUserController extends Controller
 {
@@ -18,28 +19,33 @@ class RegisteredUserController extends Controller
 
 	public function store(Request $request)
 	{
+		$min = 8;
+		$max = 64;
+		$rules = new Rules\Password($min);
+
 		$this->validate($request, [
-			'firstname' => 'required|string|max:255',
-			'lastname' => 'required|string|max:255',
-			'email' => 'required|string|email|max:255|unique:users',
+			'firstname' => ['required', 'string', 'max:' . $max],
+			'lastname' => ['required', 'string', 'max:' . $max],
+			'email' => ['required', 'email', 'max:' . $max, 'unique:users'],
+			'password' => ['required', 'min:' . $min, 'confirmed', $rules],
 			'password' => 'required|string|min:6|confirmed',
-			'g-recaptcha-response' => 'required|recaptcha',
+			'g-recaptcha-response' => ['required', 'recaptcha'],
 		], [
-			'firstname.required' => __('validation.firstname.required'),
-			'firstname.string' => __('validation.firstname.string'),
-			'firstname.max' => __('validation.firstname.max'),
-			'lastname.required' => __('validation.lastname.required'),
-			'lastname.string' => __('validation.lastname.string'),
-			'lastname.max' => __('validation.lastname.max'),
-			'email.required' => __('validation.email.required'),
-			'email.string' => __('validation.email.string'),
-			'email.email' => __('validation.email.email'),
-			'email.max' => __('validation.email.max'),
-			'email.unique' => __('validation.email.unique'),
-			'password.required' => __('validation.password.required'),
-			'password.confirmed' => __('validation.password.confirmed'),
-			'g-recaptcha-response.required' => __('validation.recaptcha.required'),
-			'g-recaptcha-response.recaptcha' => __('validation.recaptcha.recaptcha'),
+			'firstname.required' => __('auth.validation.firstname.required'),
+			'firstname.string' => __('auth.validation.firstname.string'),
+			'firstname.max' => __('auth.validation.firstname.max'),
+			'lastname.required' => __('auth.validation.lastname.required'),
+			'lastname.string' => __('auth.validation.lastname.string'),
+			'lastname.max' => __('auth.validation.lastname.max'),
+			'email.required' => __('auth.validation.email.required'),
+			'email.string' => __('auth.validation.email.string'),
+			'email.email' => __('auth.validation.email.email'),
+			'email.max' => __('auth.validation.email.max'),
+			'email.unique' => __('auth.validation.email.unique'),
+			'password.required' => __('auth.validation.password.required'),
+			'password.confirmed' => __('auth.validation.password.confirmed'),
+			'g-recaptcha.required' => __('auth.validation.recaptcha.required'),
+			'g-recaptcha.recaptcha' => __('auth.validation.recaptcha.recaptcha'),
 		]);
 
 		$user = User::create([

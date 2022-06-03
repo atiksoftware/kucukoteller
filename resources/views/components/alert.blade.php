@@ -18,8 +18,8 @@
         $text_styles = 'text-rose-500 font-semibold';
     }
     elseif($success){
-        $bg_styles = 'bg-green-100';
-        $text_styles = 'text-green-700';
+        $bg_styles = 'bg-teal-100';
+        $text_styles = 'text-teal-700 font-semibold';
     }
     elseif($warning){
         $bg_styles = 'bg-orange-100';
