@@ -12,26 +12,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
  
 
 </head>
 
 <body class="">
 
-    <div class="flex items-center justify-center min-h-screen">
+    <div id="app" class=" min-h-screen relative block pl-[300px] pt-[64px]">
         
-        <div class=" max-w-full w-[448px] p-4 md:p-12  md:border rounded mx-auto"> 
-            
-            <div class="mb-12 mt-4 text-center">
-                <h1 class="text-2xl ">@yield('title')</h1>
-                <p class="text-sm text-slate-400">@yield('description')</p>
-            </div>
-            
-            @yield('content', 'Default content')
-            
-
-        </div>
+        @include('dashboard.partials.header')
+        @include('dashboard.partials.left-sidebar')
+        
+        <main class=" p-4">
+            @yield('content')
+        </main>
         
     </div>
  
@@ -40,6 +35,6 @@
 </body>
 
  
-<script src="{{ asset('js/auth.js') }}"></script>
+<script src="{{ asset('js/dashboard.js') }}"></script>
 
 </html>
