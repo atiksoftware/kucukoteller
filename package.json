@@ -16,8 +16,5 @@
         "lodash": "^4.17.19",
         "postcss": "^8.4.14",
         "tailwindcss": "^3.0.24"
-    },
-    "dependencies": {
-        "smooth-scrollbar": "^8.7.4"
     }
 }

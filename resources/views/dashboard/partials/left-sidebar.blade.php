@@ -1,8 +1,9 @@
-<nav class="fixed left-0 top-0 bottom-0  w-[300px] flex flex-col">
+<div id="navoverlay" class=" fixed left-0 top-0 bottom-0 w-0 bg-black bg-opacity-30 opacity-0 transition-all md:hidden"></div>
+<nav class="fixed left-[-300px] md:left-0 top-0 bottom-0  w-[300px] flex flex-col transition-all bg-white" id="left-sidebar">
     <div class="h-16 border-b flex w-full justify-center items-center border-r">
         <span>{{config('app.name')}}</span>
     </div>
-    <div class="flex-1 overflow-hidden" id="left-sidebar-scrollable">
+    <div class="flex-1 overflow-hidden overflow-y-auto">
 
         <div class="py-4">
             <a href="" class="px-6 py-2 flex w-full items-center">

@@ -11,18 +11,18 @@
     'lg' => false,
     'href' => '',
     'class' => '',
-    'bold' => false,
+    'bold' => false, 
 ])
 
 @php
     $type = $submit ? 'submit' : 'button';
      
-    $px = 'px-4';
+    $px = 'px-6';
     $py = 'py-2'; 
 
     if($sm){
-        $px = 'px-2';
-        $py = 'py-1';
+        $px = 'px-6';
+        $py = 'py-2 text-[14px] font-medium';
     }
     elseif ($lg) {
         $px = 'px-6';

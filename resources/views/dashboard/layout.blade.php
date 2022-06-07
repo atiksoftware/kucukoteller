@@ -11,7 +11,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
  
 
@@ -19,12 +21,12 @@
 
 <body class="">
 
-    <div id="app" class=" min-h-screen relative block pl-[300px] pt-[64px]">
+    <div id="app" class="antialiased min-h-screen relative block md:pl-[300px] pt-[64px] transition-all">
         
         @include('dashboard.partials.header')
         @include('dashboard.partials.left-sidebar')
         
-        <main class=" p-4">
+        <main class="p-4">
             @yield('content')
         </main>
         
