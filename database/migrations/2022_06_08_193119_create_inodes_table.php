@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
-			$table->id();
-			$table->string('key');
-			$table->text('value');
-			$table->string('type');
-			$table->integer('option_group_id')->nullable();
-			$table->string('title')->nullable();
-			$table->string('description')->nullable();
-			$table->timestamps();
+        Schema::create('inodes', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -32,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('inodes');
     }
 };

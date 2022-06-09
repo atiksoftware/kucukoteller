@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('option_groups', function (Blueprint $table) {
-			$table->id();
-			$table->string('name');
-			$table->string('slug');
-			$table->timestamps();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('option_groups');
+        Schema::dropIfExists('comments');
     }
 };
