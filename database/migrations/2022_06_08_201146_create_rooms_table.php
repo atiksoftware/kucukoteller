@@ -14,8 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+			$table->id();
+			$table->json('name')->default('{}');
+			$table->foreignId('hotel_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+			$table->foreignId('room_type_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+			$table->integer('size');
+			$table->integer('children_allowed');
+			$table->float('price_effect');
+			$table->enum('price_effect_type', [1, 2]);
+			$table->timestamps();
         });
     }
 

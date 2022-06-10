@@ -15,7 +15,9 @@ class Category extends Model
 		'is_active' => true, // [type:boolean, def:true]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'is_active' => 'boolean',
+	];
 
 	protected $appends = [];
 

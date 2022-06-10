@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+			$table->id();
+			$table->foreignId('hotel_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+			$table->string('fullname', 64);
+			$table->string('email', 64);
+			$table->text('comment_content');
+			$table->text('answer_content');
+			$table->integer('rating');
+			$table->timestamps();
         });
     }
 

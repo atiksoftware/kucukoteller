@@ -14,8 +14,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+			$table->id();
+			$table->json('title')->default('{}');
+			$table->json('slug')->default('{}');
+			$table->json('brief')->default('{}');
+			$table->json('content')->default('{}');
+			$table->boolean('is_active')->default(true);
+			$table->timestamps();
         });
     }
 

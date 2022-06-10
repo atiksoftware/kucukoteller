@@ -23,8 +23,8 @@
 
     <div id="app" class="antialiased min-h-screen relative block md:pl-[300px] pt-[64px] transition-all">
         
-        @include('dashboard.partials.header')
-        @include('dashboard.partials.left-sidebar')
+        @include('dashboard.layout.header')
+        @include('dashboard.layout.left-sidebar')
         
         <main class="p-4">
             @yield('content')

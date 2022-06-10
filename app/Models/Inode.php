@@ -22,7 +22,15 @@ class Inode extends Model
 		'type' => InodeType::IMAGE, // [type:integer, enum:InodeType, def:1]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'uuid' => 'string',
+		'path' => 'string',
+		'width' => 'integer',
+		'height' => 'integer',
+		'size' => 'integer',
+		'duration' => 'integer',
+		'type' => InodeType::class,
+	];
 
 	protected $appends = [];
 

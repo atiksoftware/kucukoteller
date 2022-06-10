@@ -13,6 +13,7 @@ class Hotel extends Model
 
 	protected $attributes = [
 		'is_active' => true, // [type:boolean, def:true]
+		'user_id' => null, // [type:integer, model:User, nullable]
 
 		'email' => null, // [type:string, nullable]
 		'email_showable' => false, // [type:boolean, def:false]
@@ -38,9 +39,43 @@ class Hotel extends Model
 		'address' => null, // [type:string, nullable]
 
 		'owner_fullname' => null, // [type:string, nullable]
+
+		'rating' => 0, // [type:float, def:0]
+
+		'call_count' => 0, // [type:integer, def:0]
+		'reservation_count' => 0, // [type:integer, def:0]
+		'view_count' => 0, // [type:integer, def:0]
+		'comment_count' => 0, // [type:integer, def:0]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'is_active' => 'boolean',
+		'user_id' => 'integer',
+		'email' => 'string',
+		'email_showable' => 'boolean',
+		'phone' => 'string',
+		'phone_showable' => 'boolean',
+		'whatsapp' => 'string',
+		'whatsapp_showable' => 'boolean',
+		'website' => 'string',
+		'website_showable' => 'boolean',
+		'latitude' => 'float',
+		'longitude' => 'float',
+		'location_showable' => 'boolean',
+		'season_start_month' => 'integer',
+		'season_start_day' => 'integer',
+		'season_end_month' => 'integer',
+		'season_end_day' => 'integer',
+		'contact_person_name' => 'string',
+		'unit_count' => 'integer',
+		'address' => 'string',
+		'owner_fullname' => 'string',
+		'rating' => 'float',
+		'call_count' => 'integer',
+		'reservation_count' => 'integer',
+		'view_count' => 'integer',
+		'comment_count' => 'integer',
+	];
 
 	protected $appends = [];
 

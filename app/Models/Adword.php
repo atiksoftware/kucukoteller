@@ -1,17 +1,12 @@
 <?php
 
 namespace App\Models;
-
+ 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 
-class RoomType extends Model
+class Adword extends Model
 {
-	use HasTranslations;
-
-	public $translatable = ['name'];
-
-	protected $attributes = [];
+	protected $attributes = []; 
 
 	protected $casts = [
 	];

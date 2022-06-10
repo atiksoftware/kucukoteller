@@ -13,16 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inodes', function (Blueprint $table) {
+        Schema::create('adwords', function (Blueprint $table) {
 			$table->id();
-			$table->json('description')->default('{}');
-			$table->string('uuid', 36);
-			$table->string('path');
-			$table->integer('width');
-			$table->integer('height');
-			$table->integer('size');
-			$table->integer('duration');
-			$table->enum('type', [1, 2]);
 			$table->timestamps();
         });
     }
@@ -34,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inodes');
+        Schema::dropIfExists('adwords');
     }
 };

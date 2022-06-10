@@ -15,7 +15,14 @@ class Comment extends Model
 		'rating' => 0, // [type:integer]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'hotel_id' => 'integer',
+		'fullname' => 'string',
+		'email' => 'string',
+		'comment_content' => 'string',
+		'answer_content' => 'string',
+		'rating' => 'integer',
+	];
 
 	protected $appends = [];
 

@@ -15,7 +15,9 @@ class Proposal extends Model
 		'zone_id' => null, // [type:integer, model:Zone]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'zone_id' => 'integer',
+	];
 
 	protected $appends = [];
 

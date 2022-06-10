@@ -16,7 +16,9 @@ class Post extends Model
 		'type' => PostType::BLOG, // [type:integer, enum:PostType, def:1]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'type' => PostType::class,
+	];
 
 	protected $appends = [];
 

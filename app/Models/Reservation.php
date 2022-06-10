@@ -32,7 +32,24 @@ class Reservation extends Model
 		'user_agent' => '', // [type:string, length:255]
 	];
 
-	protected $casts = [];
+	protected $casts = [
+		'hotel_id' => 'integer',
+		'room_id' => 'integer',
+		'fullname' => 'string',
+		'email' => 'string',
+		'phone' => 'string',
+		'checkin_date' => 'date',
+		'checkout_date' => 'date',
+		'night_count' => 'integer',
+		'adults' => 'integer',
+		'children' => 'integer',
+		'children_ages' => 'string',
+		'extra_bed' => 'boolean',
+		'total_price' => 'float',
+		'note' => 'string',
+		'ip_address' => 'string',
+		'user_agent' => 'string',
+	];
 
 	protected $appends = [];
 

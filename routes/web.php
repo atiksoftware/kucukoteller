@@ -19,4 +19,9 @@ Route::group(['middleware' => 'auth'], function (): void {
 	});
 });
 
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function (): void {
+	Route::get('/category', [\App\Http\Controllers\Dashboard\CategoryController::class, 'index'])
+		->name('dashboard.category.list');
+});
+
 require __DIR__ . '/web.auth.php';

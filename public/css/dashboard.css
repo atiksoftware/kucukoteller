@@ -501,6 +501,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .h-16 {
   height: 4rem;
 }
@@ -611,6 +614,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-r {
   border-right-width: 1px;
 }
+.border-dashed {
+  border-style: dashed;
+}
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
@@ -707,6 +713,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pr-4 {
   padding-right: 1rem;
 }
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
 .text-center {
   text-align: center;
 }
@@ -728,14 +737,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-\[14px\] {
   font-size: 14px;
 }
-.font-bold {
-  font-weight: 700;
+.font-medium {
+  font-weight: 500;
 }
 .font-semibold {
   font-weight: 600;
 }
-.font-medium {
-  font-weight: 500;
+.font-bold {
+  font-weight: 700;
 }
 .uppercase {
   text-transform: uppercase;
@@ -771,6 +780,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-800 {
   --tw-text-opacity: 1;
   color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;

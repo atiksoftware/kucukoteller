@@ -13,7 +13,8 @@ class Zone extends Model
 
 	protected $attributes = [];
 
-	protected $casts = [];
+	protected $casts = [
+	];
 
 	protected $appends = [];
 

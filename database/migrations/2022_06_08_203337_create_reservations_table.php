@@ -14,8 +14,24 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+			$table->id();
+			$table->foreignId('hotel_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+			$table->foreignId('room_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+			$table->string('fullname', 64);
+			$table->string('email', 64);
+			$table->string('phone', 64);
+			$table->date('checkin_date', 64);
+			$table->date('checkout_date', 64);
+			$table->integer('night_count');
+			$table->integer('adults');
+			$table->integer('children');
+			$table->string('children_ages', 64)->nullable();
+			$table->boolean('extra_bed');
+			$table->float('total_price');
+			$table->text('note');
+			$table->string('ip_address', 64);
+			$table->string('user_agent', 255);
+			$table->timestamps();
         });
     }
 
