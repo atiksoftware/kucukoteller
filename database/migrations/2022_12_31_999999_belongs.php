@@ -14,6 +14,17 @@ return new class() extends Migration {
 			$table->foreignId('inode_id')->constrained();
 		});
 
+		Schema::create('zone_images', function (Blueprint $table): void {
+			$table->bigIncrements('id');
+			$table->foreignId('category_id')->constrained();
+			$table->foreignId('inode_id')->constrained();
+		});
+		Schema::create('zone_faqs', function (Blueprint $table): void {
+			$table->bigIncrements('id');
+			$table->foreignId('zone_id')->constrained();
+			$table->foreignId('faq_id')->constrained();
+		});
+
 		Schema::create('hotel_images', function (Blueprint $table): void {
 			$table->bigIncrements('id');
 			$table->foreignId('hotel_id')->constrained();
@@ -52,6 +63,9 @@ return new class() extends Migration {
 	public function down(): void
 	{
 		Schema::dropIfExists('category_images');
+
+		Schema::dropIfExists('zone_images');
+		Schema::dropIfExists('zone_faqs');
 
 		Schema::dropIfExists('hotel_images');
 		Schema::dropIfExists('hotel_categories');

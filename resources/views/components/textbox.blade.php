@@ -14,13 +14,13 @@
 
 <div>
     @if ($label)
-        <label for="{{ $name }}" class="text-sm">{{ $label }}</label> 
+        <label for="{{ $name }}" class="text-sm font-medium">{{ $label }}</label> 
     @endif 
     <input 
     type="{{ $type }}" 
     name="{{ $name }}" 
     value="{{ $value }}" 
-    class="w-full block rounded border border-slate-400 px-4 py-3 bg-white focus:outline-primarydark"
+    class="block w-full px-4 py-3 bg-white border rounded border-slate-400 focus:outline-primarydark"
     placeholder="{{ $placeholder }}" 
     @if ($required) required @endif
     @if ($autofocus) autofocus @endif

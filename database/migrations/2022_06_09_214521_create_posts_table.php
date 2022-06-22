@@ -19,6 +19,8 @@ return new class extends Migration
 			$table->json('slug')->default('{}');
 			$table->json('brief')->default('{}');
 			$table->json('content')->default('{}');
+			$table->boolean('is_active')->default(true);
+			$table->boolean('is_visible')->default(true);
 			$table->enum('type', [1, 2, 3]);
 			$table->timestamps();
         });

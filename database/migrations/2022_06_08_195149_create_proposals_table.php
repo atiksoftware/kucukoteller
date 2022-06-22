@@ -19,6 +19,9 @@ return new class extends Migration
 			$table->json('slug')->default('{}');
 			$table->json('brief')->default('{}');
 			$table->json('content')->default('{}');
+			$table->json('meta_title')->default('{}');
+			$table->json('meta_description')->default('{}');
+			$table->enum('type', [1, 2, 3, 4, 5, 6, 7, 8]);
 			$table->foreignId('zone_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 			$table->timestamps();
         });

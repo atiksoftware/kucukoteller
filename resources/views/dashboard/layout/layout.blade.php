@@ -19,7 +19,7 @@
 
 </head>
 
-<body class="">
+<body class="bg-slate-200">
 
     <div id="app" class="antialiased min-h-screen relative block md:pl-[300px] pt-[64px] transition-all">
         
@@ -27,12 +27,16 @@
         @include('dashboard.layout.left-sidebar')
         
         <main class="p-4">
-            @yield('content')
+            <div class="p-4 bg-white rounded ">
+                @yield('content')
+            </div>
         </main>
         
     </div>
  
-
+    @foreach (\App\Helpers\ToastHelper::get() as $toast)
+    <div class="hidden toast" data-type="{{$toast['type']}}" data-message="{{$toast['text']}}" ></div> 
+    @endforeach  
 
 </body>
 

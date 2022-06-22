@@ -3,7 +3,15 @@
 namespace App\Providers;
 
 use App\Models\User;
+use App\Models\Zone;
+use App\Models\Hotel;
+use App\Models\Category;
+use App\Models\Proposal;
 use App\Observers\UserObserver;
+use App\Observers\ZoneObserver;
+use App\Observers\HotelObserver;
+use App\Observers\CategoryObserver;
+use App\Observers\ProposalObserver;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -28,6 +36,10 @@ class EventServiceProvider extends ServiceProvider
 	public function boot(): void
 	{
 		User::observe(UserObserver::class);
+		Category::observe(CategoryObserver::class);
+		Zone::observe(ZoneObserver::class);
+		Proposal::observe(ProposalObserver::class);
+		Hotel::observe(HotelObserver::class);
 	}
 
 	/**

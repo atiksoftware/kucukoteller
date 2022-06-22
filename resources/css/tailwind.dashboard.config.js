@@ -3,8 +3,9 @@ module.exports = {
         "./resources/views/dashboard/*.blade.php",    
         "./resources/views/dashboard/**/*.blade.php",    
         "./resources/views/components/*.blade.php",  
+        "./resources/views/vendor/pagination/tailwind.blade.php", 
         "./resources/js/dashboard/*.js",  
-        "./resources/js/dashboard/**/*.js",  
+        "./resources/js/dashboard/**/*.js",    
     ],
     theme: { 
         extend: {

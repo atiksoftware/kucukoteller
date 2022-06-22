@@ -20,6 +20,11 @@ return new class extends Migration
 			$table->json('slug')->default('{}');
 			$table->json('brief')->default('{}');
 			$table->json('content')->default('{}');
+			$table->json('meta_title')->default('{}');
+			$table->json('meta_description')->default('{}');
+			$table->boolean('is_active')->default(true);
+			$table->boolean('is_visible')->default(true);
+			$table->integer('parent_id')->nullable();
 			$table->timestamps();
         });
     }

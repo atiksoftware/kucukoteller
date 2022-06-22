@@ -16,5 +16,16 @@
         "lodash": "^4.17.19",
         "postcss": "^8.4.14",
         "tailwindcss": "^3.0.24"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-balloon": "^34.1.0",
+        "@ckeditor/ckeditor5-build-balloon-block": "^34.1.0",
+        "@ckeditor/ckeditor5-build-classic": "^34.1.0",
+        "@ckeditor/ckeditor5-build-decoupled-document": "^34.1.0",
+        "@ckeditor/ckeditor5-editor-decoupled": "^34.1.0",
+        "slugify": "^1.6.5",
+        "sortablejs": "^1.15.0",
+        "swiper": "^8.2.4",
+        "toastify-js": "^1.11.2"
     }
 }

@@ -13,6 +13,7 @@ class Comment extends Model
 		'comment_content' => '', // [type:string, dbType:text]
 		'answer_content' => '', // [type:string, dbType:text]
 		'rating' => 0, // [type:integer]
+		'is_active' => true, // [type:boolean, def:true]
 	];
 
 	protected $casts = [
@@ -22,6 +23,7 @@ class Comment extends Model
 		'comment_content' => 'string',
 		'answer_content' => 'string',
 		'rating' => 'integer',
+		'is_active' => 'boolean',
 	];
 
 	protected $appends = [];

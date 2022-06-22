@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
 		//     'name' => 'Test User',
 		//     'email' => 'test@example.com',
 		// ]);
-		User::truncate();
+		// User::truncate();
 
 		User::create([
 			'firstname' => 'Mansur',
@@ -32,7 +32,10 @@ class DatabaseSeeder extends Seeder
 
 		// call OptionSeeder
 		// $this->call(OptionSeeder::class);
-		$this->call(CategorySeeder::class);
+		// $this->call(CategorySeeder::class);
+
+		$this->call(BedTypeSeeder::class);
+
 		DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 	}
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "998096c698e2f35c3f8521e9a81fc2c7",
+    "content-hash": "1caa62ce82415a145a79a53651c1fcef",
     "packages": [
         {
             "name": "atiksoftware/model-fill",
@@ -55,6 +55,51 @@
                 "source": "https://github.com/atiksoftware/model-fill/tree/v1.0.1"
             },
             "time": "2022-05-25T00:56:56+00:00"
+        },
+        {
+            "name": "atiksoftware/php-gramer",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/atiksoftware/php-gramer.git",
+                "reference": "fe66fb4e18613d2f104a6b31b2547dcf67549071"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/atiksoftware/php-gramer/zipball/fe66fb4e18613d2f104a6b31b2547dcf67549071",
+                "reference": "fe66fb4e18613d2f104a6b31b2547dcf67549071",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Atiksoftware\\Gramer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mansur ATİK",
+                    "email": "atiksoftware@gmail.com"
+                }
+            ],
+            "description": "Türkçedeki iyelik ekleri. e/de/den/ile ekleri.",
+            "keywords": [
+                "ekleri",
+                "hal",
+                "iyelik",
+                "laravel",
+                "php",
+                "turkce"
+            ],
+            "support": {
+                "issues": "https://github.com/atiksoftware/php-gramer/issues",
+                "source": "https://github.com/atiksoftware/php-gramer/tree/1.1"
+            },
+            "time": "2021-01-11T13:39:19+00:00"
         },
         {
             "name": "bacon/bacon-qr-code",

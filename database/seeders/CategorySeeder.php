@@ -21,6 +21,9 @@ class CategorySeeder extends Seeder
 			$record->brief = $row['slogan'];
 			$record->content = $row['text'];
 
+			$record->meta_title = $row['meta']['title'];
+			$record->meta_description = $row['meta']['description'];
+
 			$timestamp = $row['date']['edit'];
 			$record->created_at = \Carbon\Carbon::createFromTimestamp($timestamp);
 			$record->updated_at = \Carbon\Carbon::createFromTimestamp($timestamp);

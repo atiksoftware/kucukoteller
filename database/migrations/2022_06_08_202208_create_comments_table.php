@@ -4,16 +4,13 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('comments', function (Blueprint $table) {
+return new class() extends Migration {
+	/**
+	 * Run the migrations.
+	 */
+	public function up(): void
+	{
+		Schema::create('comments', function (Blueprint $table): void {
 			$table->id();
 			$table->foreignId('hotel_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 			$table->string('fullname', 64);
@@ -21,17 +18,16 @@ return new class extends Migration
 			$table->text('comment_content');
 			$table->text('answer_content');
 			$table->integer('rating');
+			$table->boolean('is_active')->default(true);
 			$table->timestamps();
-        });
-    }
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('comments');
-    }
+	/**
+	 * Reverse the migrations.
+	 */
+	public function down(): void
+	{
+		Schema::dropIfExists('comments');
+	}
 };

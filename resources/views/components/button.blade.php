@@ -11,6 +11,7 @@
     'lg' => false,
     'href' => '',
     'class' => '',
+    'medium' => false, 
     'bold' => false, 
 ])
 
@@ -47,6 +48,35 @@
                 }
             }
             break; 
+        case 'rose':
+            $bg_styles = 'bg-rose-500';
+            $text_styles = 'text-white';
+            if(!$disabled){ 
+                $bg_styles .= ' hover:bg-rose-600'; 
+            }
+            if($text){
+                $bg_styles = 'bg-transparent'; 
+                $text_styles = 'text-rose-500';
+                if(!$disabled){
+                    $bg_styles .= ' hover:bg-rose-600 hover:bg-opacity-5 hover:text-rose-600';  
+                }
+            }
+            break; 
+        case 'slate':
+            $bg_styles = 'bg-slate-200';
+            $text_styles = 'text-slate-600';
+            if(!$disabled){ 
+                $bg_styles .= ' hover:bg-slate-300'; 
+            }
+            if($text){
+                $bg_styles = 'bg-transparent'; 
+                $text_styles = 'text-slate-500';
+                if(!$disabled){
+                    $bg_styles .= ' hover:bg-slate-600 hover:bg-opacity-5 hover:text-slate-600';  
+                }
+            }
+            break; 
+
     }
 
     // $btn_classes = implode(' ',[
@@ -86,6 +116,9 @@
 
     if($href != ''){
         $classes[] = 'inline-block';
+    }
+    if($medium ){
+        $classes[] = 'font-medium';
     }
     if($bold ){
         $classes[] = 'font-bold';
